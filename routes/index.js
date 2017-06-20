@@ -25,6 +25,7 @@ var message2 = { //this may vary according to the message type (single recipient
 };
 
 router.get('/', function (req, res, next) {
+    res.render('index');
     fcm.send(message, function (err, response) {
         if (err) {
             console.log("Something has gone wrong!");
@@ -35,6 +36,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/test', function (req, res, next) {
+    res.render('profile');
     fcm.send(message2, function (err, response) {
         if (err) {
             console.log("Something has gone wrong!");
